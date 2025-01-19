@@ -1,1 +1,2 @@
-![Demo App](https://github.com/AnmolShrma/AnimatedDrawer/tree/main/src/assets/demo.gif)
+## Demo App
+<img src="/src/assets/demo.gif" width="280" height="560"/>
