@@ -15,7 +15,7 @@ const SplashScreen: React.FC = () => {
       <LottieView
         style={{width, height}}
         source={ASSET_LINKS.SPLASH_LOTTIE}
-        onAnimationFinish={() => navigation.replace(SCREEN_NAMES.HOME)}
+        onAnimationFinish={() => navigation.replace(SCREEN_NAMES.APP)}
         autoPlay
         loop={false}
       />

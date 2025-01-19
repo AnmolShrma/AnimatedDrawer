@@ -3,9 +3,11 @@ const ASSET_LINKS: {[key: string]: string} = {
 };
 
 const SCREEN_NAMES: {[key: string]: string} = {
-  SPLASH: 'SplashScreen',
-  HOME: 'HomeScreen',
-  NEXT: 'NextScreen',
+  SPLASH: 'Splash',
+  HOME: 'Home',
+  APP: 'APP',
+  BOTTOM_TAB: 'BottomTab',
+  CONTACT: 'Contact',
 };
 
 export {ASSET_LINKS, SCREEN_NAMES};
