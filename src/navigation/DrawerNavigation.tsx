@@ -1,9 +1,10 @@
 import {
   createDrawerNavigator,
+  DrawerContentComponentProps,
   DrawerContentScrollView,
   useDrawerProgress,
 } from '@react-navigation/drawer';
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Animated, {interpolate, useAnimatedStyle} from 'react-native-reanimated';
 import {SCREEN_NAMES} from '../constants';
@@ -13,7 +14,11 @@ import BottomNavigation from './BottomNavigation';
 
 const Drawer = createDrawerNavigator();
 
-const CustomDrawerContent = ({navigation}) => {
+interface CustomDrawerContentProps extends DrawerContentComponentProps {}
+
+const CustomDrawerContent: React.FC<CustomDrawerContentProps> = ({
+  navigation,
+}) => {
   const menuItems = [
     {label: 'Home', screen: SCREEN_NAMES.HOME},
     {label: 'Contact', screen: SCREEN_NAMES.CONTACT},
@@ -42,7 +47,13 @@ const CustomDrawerContent = ({navigation}) => {
   );
 };
 
-const AnimatedScreenWrapper = ({children}) => {
+interface AnimatedScreenWrapperProps {
+  children: ReactNode;
+}
+
+const AnimatedScreenWrapper: React.FC<AnimatedScreenWrapperProps> = ({
+  children,
+}) => {
   const progress = useDrawerProgress();
 
   const animatedStyle = useAnimatedStyle(() => {
