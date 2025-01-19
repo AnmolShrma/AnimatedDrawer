@@ -5,8 +5,11 @@ import {ContactIcon, HomeIcon} from '../assets/svgs';
 import {SCREEN_NAMES} from '../constants';
 import ContactScreen from '../screens/ContactScreen';
 import HomeScreen from '../screens/HomeScreen';
+import {createStackNavigator} from '@react-navigation/stack';
+import UserProfileScreen from '../screens/UserProfileScreen';
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const screenOptions = ({route}: {route: {name: string}}) => ({
   tabBarLabelStyle: ({focused}: {focused: boolean}) => ({
@@ -23,6 +26,24 @@ const screenOptions = ({route}: {route: {name: string}}) => ({
   },
 });
 
+// Home Stack Navigator
+function HomeStackNavigator() {
+  return (
+    <Stack.Navigator screenOptions={{headerShown: true}}>
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={SCREEN_NAMES.HOME}
+        component={HomeScreen}
+      />
+      <Stack.Screen
+        options={{headerShown: false}}
+        name={SCREEN_NAMES.USER}
+        component={UserProfileScreen}
+      />
+    </Stack.Navigator>
+  );
+}
+
 const BottomNavigation: React.FC = () => {
   return (
     <Tab.Navigator
@@ -31,7 +52,7 @@ const BottomNavigation: React.FC = () => {
       <Tab.Screen
         options={{headerShown: false}}
         name={SCREEN_NAMES.HOME}
-        component={HomeScreen}
+        component={HomeStackNavigator}
       />
       <Tab.Screen
         options={{headerShown: false}}

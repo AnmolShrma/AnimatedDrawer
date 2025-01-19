@@ -8,6 +8,7 @@ const SCREEN_NAMES: {[key: string]: string} = {
   APP: 'APP',
   BOTTOM_TAB: 'BottomTab',
   CONTACT: 'Contact',
+  USER: 'USER',
 };
 
 export {ASSET_LINKS, SCREEN_NAMES};
